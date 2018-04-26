@@ -23,5 +23,21 @@ html {
 *****************************/
 
 .loading-bar {
-  
+  background: black;
+  width: 100%;
+}
+
+.loading-bar__item {
+  width: 0%;
+  height: 4px;
+  background: red;
+}
+
+.loading-buttons {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+button {
+  padding: 1rem;
 }
