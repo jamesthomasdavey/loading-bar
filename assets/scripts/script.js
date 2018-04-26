@@ -3,13 +3,15 @@ const buttonEls = document.querySelectorAll(`.loading-button`);
 
 function loadFromButton() {
   for (let button of buttonEls) {
-    let buttonPercent = 0;
     button.addEventListener(`click`, function () {
-      buttonPercent = Number(button.innerHTML);
+      loadingBarItemEl.style.width = `0%`;
+      loadingBarItemEl.style.display = `block`;
+      let buttonPercent = Number(button.innerHTML);
       let width = 0;
       let loadingBar = setInterval(function () {
         if (width >= buttonPercent) {
           clearInterval(loadingBar);
+          loadingBarItemEl.style.display = `none`;
         } else {
           width++;
           loadingBarItemEl.style.width = `${width}%`;
